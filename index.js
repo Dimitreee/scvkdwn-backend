@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path")
 const app = express();
-const nocache = require('nocache')
 
 const constants = require('./constants')
 const utils = require("./utils")
@@ -16,7 +15,7 @@ app.get("/authRedirect", (req, res) => {
     .fetch
     .get(tokenUri)
     .then(
-      ({access_token, expires_in, user_id}) => utils.uploadAudio(access_token),
+      ({access_token}) => utils.uploadAudio(access_token),
       rej => console.log(rej, "rej")
     )
 })
