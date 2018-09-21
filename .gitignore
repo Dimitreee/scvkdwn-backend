@@ -1,1 +1,12 @@
-node_modules/
+# Mac OS
+.DS_Store
+
+# Node
+/node_modules
+
+# Environment
+/.env
+/.idea
+
+# Build
+/public
