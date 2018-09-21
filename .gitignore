@@ -1,11 +1,12 @@
-# Mac OS
 .DS_Store
+.env
 
 # Node
 /node_modules
+/lib
+/etc
 
 # Environment
-/.env
 /.idea
 /bin
 
