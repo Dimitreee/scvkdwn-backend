@@ -1,6 +1,6 @@
 import fetch from "node-fetch"
 
-import {env} from "/utils"
+import env from "/.env"
 import * as vkUrl from "./constants"
 
 const {
@@ -9,19 +9,31 @@ const {
 } = env
 
 class VkWrapper {
-  constructor() {}
+  constructor() {
+
+  }
 
   getAccesToken = ({code}) => {
+    // should get auth code from client
     const url = vkUrl.Auth(code)
     return fetch(url)
   }
 
   getAudioUploadAurl = () => {
-    const url = vkUrl.GetUploadAddress(token)
+    // should get access_token from vk.api
+    const url = vkUrl.GetUploadAddress("123")
+    return fetch(url)
   }
 
-  uploadAudio = ({upload_url}) => {
+  uploadAudio = ({upload_url, formData}) => {
+    // should upload audio to vk.api server
+    return fetch(upload_url)
+  }
 
+  saveAudio = ({queryParams}) => {
+    // should save audio from vk.api
+    const url = vkUrl.SaveAudio(queryParams)
+    return fetch(url)
   }
 }
 

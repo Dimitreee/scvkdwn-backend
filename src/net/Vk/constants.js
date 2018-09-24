@@ -3,3 +3,6 @@ export const Auth =
 
 export const GetUploadAddress =
   token => `https://api.vk.com/method/audio.getUploadServer?access_token=${token}&v=5.84`
+
+export const SaveAudio =
+  queryParams => `https://api.vk.com/method/audio.save?${queryParams}&v=5.84`

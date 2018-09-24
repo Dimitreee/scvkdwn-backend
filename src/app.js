@@ -1,7 +1,7 @@
 import express from "express"
 
 import {vkWrapper} from "/net"
-import {env} from "/utils"
+import env from "/.env"
 import {Redis} from "/store"
 
 Redis.set({key: "yo", value: "123"})
@@ -14,6 +14,7 @@ app.post("/", (req, res) => {
 })
 
 const {PORT} = env
+
 app.listen(PORT || 8080, () => {
   console.log(`listening ${PORT || 8000}`)
 })
